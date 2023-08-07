@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RockPaperScissors</title>
+    <style>
+      
+        button{
+            margin: 10px;
+            padding-left: 30px;
+            padding-right:30px;
+        }
+        button:focus{
+            background-color: blue;
+        }
+    </style>
+  </head>
+  <body>
+    <script>
+      alert("Welcome to rock paper scissor game");
+      
+      function userChoice(ch){
+      choice = ch;
+
+      let user;
+      if (choice == 1) {
+        user = "rock";
+      } else if (choice == 2) {
+        user = "paper";
+      } else if (choice == 3) {
+        user = "scissor";
+      } else alert("Please enter a valid input(1-3)");
+    
+      let compchoice = Math.floor(Math.random() * 3);
+      let ai;
+      if (compchoice == 0) {
+        ai = "rock";
+      } else if (compchoice == 1) {
+        ai = "paper";
+      } else {
+        ai = "scissor";
+      }
+
+      if (ai == "rock" && user == "scissor")
+        alert(`Your choice: ${user}, Computer's choice: ${ai} You lost better luck next time 🙁`);
+      else if (ai == "scissor" && user == "paper")
+        alert(`Your choice: ${user}, Computer's choice: ${ai} You lost better luck next time 🙁`);
+      else if (ai == "paper" && user == "rock")
+        alert(`Your choice: ${user}, Computer's choice: ${ai} You lost better luck next time 🙁`);
+      else if (ai == "paper" && user == "paper") 
+        alert(`Your choice: ${user}, Computer's choice: ${ai} Its a draw, wanna try again 😉 `);
+      else if (ai == "rock" && user == "rock") 
+        alert(`Your choice: ${user}, Computer's choice: ${ai} Its a draw, wanna try again 😉 `);
+      else if (ai == "scissor" && user == "scissor") 
+        alert(`Your choice: ${user}, Computer's choice: ${ai} Its a draw, wanna try again 😉 `);
+      else 
+      alert(`Your choice: ${user}, Computer's choice: ${ai} Congratulations, you won 🤩🥳`);
+   }
+    </script>
+    <div class="buttons">
+    <button onclick="userChoice(1)">Rock</button>
+    <button onclick="userChoice(2)">Paper</button>
+    <button onclick="userChoice(3)">Scissor</button>
+    </div>
+  </body>
+</html>
