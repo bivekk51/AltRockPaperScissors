@@ -4,7 +4,7 @@
 A simple Rock, Paper, Scissors game implemented in HTML, CSS, and JavaScript.
 
 ## Demo
-[Play the game](https://example.com/rock-paper-scissors-demo)
+[Play the game]([https://altrockpaperscissors.netlify.app/])
 
 
 
