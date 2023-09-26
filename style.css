@@ -1,0 +1,36 @@
+/* style.css */
+button {
+    margin: 10px;
+    padding-left: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: blue;
+    transform: scale(1.1);
+}
+
+.choice-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.choice-image img {
+    max-width: 100px;
+    height: auto;
+}
+
+.choice-image.show {
+    opacity: 1;
+}
+
+.buttons button i {
+    font-size: 2em; 
+    color: #3498db; 
+}
+
+
