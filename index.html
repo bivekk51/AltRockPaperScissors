@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RockPaperScissors</title>
+    <title>TicTacToe</title>
     <link rel="stylesheet" href="style.css">
     <!-- Link to FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <div id="scoreboard">User: 0 | Computer: 0 | Draws: 0</div>
-    <div class="buttons">
-        <!-- Replace text with FontAwesome icons and add onclick attributes -->
-        <button id="rock" onclick="userChoice(1)"><i class="fas fa-hand-rock"></i></button>
-        <button id="paper" onclick="userChoice(2)"><i class="fas fa-hand-paper"></i></button>
-        <button id="scissor" onclick="userChoice(3)"><i class="fas fa-hand-scissors"></i></button>
-        <button id="reset-button" onclick="resetGame()">New Game</button>
+    <div id="title">TicTacToe</div>
+    <button id="play-button">Play Game</button>
+    <div id="game-container" style="display: none;">
+        <div id="scoreboard">
+            <span style="background-color: blue;">User: 0</span> |
+            <span style="background-color: red;">Computer: 0</span> |
+            <span style="background-color: yellow; color: black;">Draws: 0</span>
+        </div>
+        <div class="buttons">
+            <button id="rock" onclick="userChoice(1)"><i class="fas fa-hand-rock"></i></button>
+            <button id="paper" onclick="userChoice(2)"><i class="fas fa-hand-paper"></i></button>
+            <button id="scissor" onclick="userChoice(3)"><i class="fas fa-hand-scissors"></i></button>
+            <button id="reset-button" onclick="resetGame()">New Game</button>
+        </div>
+        <div id="user-choice" class="choice-image"></div>
+        <div id="computer-choice" class="choice-image"></div>
     </div>
-    <div id="user-choice" class="choice-image"></div>
-    <div id="computer-choice" class="choice-image"></div>
 
     <script src="script.js"></script>
 </body>
