@@ -1,8 +1,9 @@
-/* style.css */
+
 button {
     margin: 10px;
-    padding-left: 30px;
+    padding: 80px; /* Increase padding to 80px */
     transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* Remove button borders */
 }
 
 button:hover {
@@ -10,27 +11,29 @@ button:hover {
     transform: scale(1.1);
 }
 
-.choice-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
 
-.choice-image img {
-    max-width: 100px;
-    height: auto;
-}
-
-.choice-image.show {
-    opacity: 1;
-}
 
 .buttons button i {
-    font-size: 2em; 
-    color: #3498db; 
+    font-size: 3em; /* Increase the icon size */
+    color: #3498db;
 }
 
+#title {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 600px) {
+    
+    button {
+        padding: 40px; 
+    }
+
+    #title {
+        font-size: 40px; 
+    }
+}
 
