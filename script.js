@@ -1,4 +1,4 @@
-// script.js
+
 let userWins = 0;
 let computerWins = 0;
 let draws = 0;
