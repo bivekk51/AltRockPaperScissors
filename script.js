@@ -32,7 +32,7 @@ function userChoice(ch) {
 }
  
 
-    playSound(user);
+   
 
     const compchoice = Math.floor(Math.random() * 3);
     const ai = compchoice === 0 ? "rock" : compchoice === 1 ? "paper" : "scissor";
