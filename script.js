@@ -11,48 +11,36 @@ function playSound(choice) {
 function displayChoice(elementId, choice) {
     const choiceElement = document.getElementById(elementId);
 
-    const choiceImage = document.createElement("img");
-    choiceImage.src = choice + ".png";
-    choiceImage.alt = choice;
-
     while (choiceElement.firstChild) {
         choiceElement.firstChild.remove();
     }
-    choiceElement.appendChild(choiceImage);
-    choiceElement.classList.add("show");
+ 
 }
 
 function updateScoreboard() {
     const scoreboardElement = document.getElementById("scoreboard");
-    scoreboardElement.innerHTML = `User: ${userWins} | Computer: ${computerWins} | Draws: ${draws}`;
+    scoreboardElement.innerHTML = `
+        <span style="background-color: blue;">User: ${userWins}</span> |
+        <span style="background-color: red;">Computer: ${computerWins}</span> |
+        <span style="background-color: yellow; color: black;">Draws: ${draws}</span>`;
 }
 
 function userChoice(ch) {
     choice = ch;
 
-    let user;
-    if (choice == 1) {
-        user = "rock";
-    } else if (choice == 2) {
-        user = "paper";
-    } else if (choice == 3) {
-        user = "scissor";
-    } else {
-        alert("Please enter a valid input (1-3)");
-        return;
-    }
+    const user = choice === 1 ? "rock" : choice === 2 ? "paper" : choice === 3 ? "scissor" : null;
+
+    if (user === null) {
+    alert("Please enter a valid input (1-3)");
+    return;
+}
+ 
 
     playSound(user);
 
-    let compchoice = Math.floor(Math.random() * 3);
-    let ai;
-    if (compchoice == 0) {
-        ai = "rock";
-    } else if (compchoice == 1) {
-        ai = "paper";
-    } else {
-        ai = "scissor";
-    }
+    const compchoice = Math.floor(Math.random() * 3);
+    const ai = compchoice === 0 ? "rock" : compchoice === 1 ? "paper" : "scissor";
+
 
     displayResult(user, ai);
 }
@@ -61,7 +49,7 @@ function displayResult(user, ai) {
     let resultMessage = "";
     if (ai == user) {
         resultMessage = `It's a draw! You both chose ${user}. Wanna try again? 😊`;
-	draws++;
+        draws++;
     } else if (
         (ai == "rock" && user == "scissor") ||
         (ai == "scissor" && user == "paper") ||
@@ -76,7 +64,6 @@ function displayResult(user, ai) {
 
     updateScoreboard();
 
-    playSound(resultMessage.includes("won") ? "win" : resultMessage.includes("lost") ? "lose" : "draw");
 
     const resultElement = document.createElement("div");
     resultElement.classList.add("result-message");
@@ -87,6 +74,19 @@ function displayResult(user, ai) {
         resultElement.remove();
     }, 3000);
 }
+
+// Function to show the game board and hide the "Play Game" button
+function showGame() {
+    const playButton = document.getElementById("play-button");
+    const gameContainer = document.getElementById("game-container");
+
+    playButton.style.display = "none";
+    gameContainer.style.display = "block";
+}
+
+// Add an event listener to the "Play Game" button
+const playButton = document.getElementById("play-button");
+playButton.addEventListener("click", showGame);
 
 const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", resetGame);
