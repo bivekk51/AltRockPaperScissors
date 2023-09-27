@@ -3,10 +3,6 @@ let userWins = 0;
 let computerWins = 0;
 let draws = 0;
 
-function playSound(choice) {
-    const audio = new Audio(`${choice}.mp3`);
-    audio.play();
-}
 
 function displayChoice(elementId, choice) {
     const choiceElement = document.getElementById(elementId);
