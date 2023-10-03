@@ -6,18 +6,11 @@ A simple Rock, Paper, Scissors game implemented in HTML, CSS, and JavaScript.
 ## Demo
 [Play the game](https://altrockpaperscissors.netlify.app/)
 
-
-
 ## Table of Contents
-- [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Code Structure](#code-structure)
 
-
-## Installation
-1. Clone the repository.
-2. Open the `index.html` file in your web browser.
 
 ## Usage
 - Click on the Rock, Paper, or Scissors buttons to make your choice.
